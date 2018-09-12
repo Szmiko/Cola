@@ -13,11 +13,37 @@ function compareSold(num1, num2) {
 	}
 };
 
+function compareName(name1, name2) {
+	if (name1.name > name2.name) {
+		return 1;
+	} else if (name1.name == name2.name) {
+		return 0;
+	} else {
+		return -1;
+	}
+};
+
+function compareCalories(cal1, cal2) {
+	if (cal1.calories > cal2.calories) {
+		return (cal1.calories - cal2.calories);
+	}
+};
+
+function compareColor(col1, col2) {
+	if (col1.color > col2.color) {
+		return 1;
+	} else if (col1.color == col2.color) {
+		return 0;
+	} else {
+		return -1;
+	}
+};
+
 function printProducts(products) {
 	for (var i = 0; i < products.length; i++) {
 		console.log("Nazwa: " + products[i].name + " , liczba kalorii: " + products[i].calories + " , kolor: " + products[i].color + " , ilość sprzedanych butelek: " + products[i].sold + ".");
 	}
 };
 
-products.sort(compareSold);
-printProducts(products);	
+products.sort(compareColor);
+printProducts(products);
